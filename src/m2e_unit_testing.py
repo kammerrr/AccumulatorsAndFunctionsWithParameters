@@ -10,7 +10,7 @@ Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
 # Students: READ the comment FARTHER DOWN in this file.
 #   There is nothing for you to turn in from this file.
 #
-# TODO #1:
+# DONE #1:
 # This file is the first file in project to use rosegraphics, so you need to right click
 # on the src folder and select Mark Directory as --> Sources Root
 # When you do that watch the red underline on rosegraphic disappear (you may need
@@ -35,7 +35,7 @@ def test_distance():
     print('       actual:  ', answer)
 
     # Test 2:
-    expected = 5
+    expected = math.sqrt(25)
     answer = distance(rg.Point(3, 4))
     print('Test 2 expected:', expected)
     print('       actual:  ', answer)
@@ -57,7 +57,7 @@ def distance(point):
     """
     # This code has an error, on purpose.  Do NOT fix it.
     x_squared = point.x * point.x
-    y_squared = point.y * point.x
+    y_squared = point.y * point.y
 
     return math.sqrt(x_squared + y_squared)
 
