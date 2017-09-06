@@ -4,8 +4,10 @@ in its simplest classic forms:
    SUMMING:       total = total + number
 
 Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Rylan Kammerer.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
+
+import math as ma
 
 
 def main():
@@ -17,7 +19,7 @@ def main():
 def test_sum_cosines():
     """ Tests the   sum_cosines   function. """
     # ------------------------------------------------------------------
-    # TODO: 2. Implement this function.
+    # DONE: 2. Implement this function.
     #   It TESTS the  sum_cosines  function defined below.
     #   Include at least **   3   ** tests.
     #
@@ -29,31 +31,47 @@ def test_sum_cosines():
     print('Testing the   sum_cosines   function:')
     print('--------------------------------------------------')
 
+    # test 1
+    expected = 1.1242
+    real = sum_cosines(2)
+    print('Test 2 expected: ', expected)
+    print('actual: ', real)
+
+    # test 2
+    expected = 0.1342
+    real = sum_cosines(3)
+    print('Test 2 expected: ', expected)
+    print('actual: ', real)
+
 
 def sum_cosines(n):
-    """
-    What comes in:  A non-negative integer n.
-    What goes out:  The sum of the cosines of the integers
-       0, 1, 2, 3, ... n, inclusive, for the given n.
-    Side effects:   None.
-    Example:
-      If n is 3, this function returns
-        cos(0) + cos(1) + cos(2) + cos(3)   which is about 0.13416.
-    """
+    total = 0
+    for k in range(n+1):
+        total = total + ma.cos(k)
+    return total
+
+
+    # """
+    # What comes in:  A non-negative integer n.
+    # What goes out:  The sum of the cosines of the integers
+     #  0, 1, 2, 3, ... n, inclusive, for the given n.
+    # Side effects:   None.
+    # Example:
+     # If n is 3, this function returns
+      #  cos(0) + cos(1) + cos(2) + cos(3)   which is about 0.13416.
+    # """
     # ------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     #   That is called TEST-DRIVEN DEVELOPMENT (TDD).
     #
     #   No fair running the code of  sum_cosines  to GENERATE
     #   test cases; that would defeat the purpose of TESTING!
     # ------------------------------------------------------------------
-
-
 def test_sum_square_roots():
     """ Tests the   sum_square_roots   function. """
     # ------------------------------------------------------------------
-    # TODO: 4. Implement this function.
+    # DONE: 4. Implement this function.
     #   It TESTS the  sum_square_roots  function defined below.
     #   Include at least **   3   ** tests.
     #
@@ -64,6 +82,16 @@ def test_sum_square_roots():
     print('--------------------------------------------------')
     print('Testing the   sum_square_roots   function:')
     print('--------------------------------------------------')
+
+    expected = 2.41421
+    real = sum_square_roots(2)
+    print('Test 1 expected: ', expected)
+    print('actual: ', real)
+
+    expected = 4.14626
+    real = sum_square_roots(3)
+    print('Test 1 expected: ', expected)
+    print('actual: ', real)
 
 
 def sum_square_roots(n):
@@ -80,15 +108,17 @@ def sum_square_roots(n):
       which is about 11.854408.
     """
     # ------------------------------------------------------------------
-    # TODO: 5. Implement and test this function.
+    # DONE: 5. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     #   That is called TEST-DRIVEN DEVELOPMENT (TDD).
     #
     #   No fair running the code of  sum_square_roots  to GENERATE
     #   test cases; that would defeat the purpose of TESTING!
     # ------------------------------------------------------------------
-
-
+    total = 0
+    for k in range(n+1):
+        total = total + ma.sqrt(k)
+    return total
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
 # ----------------------------------------------------------------------

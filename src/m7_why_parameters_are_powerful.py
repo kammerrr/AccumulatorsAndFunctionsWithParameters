@@ -2,8 +2,8 @@
 This module lets you experience the POWER of FUNCTIONS and PARAMETERS.
 
 Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Rylan Kammerer.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
 
@@ -12,9 +12,8 @@ def main():
     """ Calls the   TEST   functions in this module. """
     test_draw_circles()
     # Un-comment the next lines when you are ready to use them.
-    # test_better_draw_circles()
-    # test_even_better_draw_circles()
-
+    test_better_draw_circles()
+    test_even_better_draw_circles()
 
 # ----------------------------------------------------------------------
 # READ THIS:
@@ -64,7 +63,7 @@ def draw_circles():
     window.close_on_mouse_click()
 
 # ----------------------------------------------------------------------
-# TODO: 2.
+# DONE: 2.
 #   First, RUN this program.  You will see that draw_circles draws
 #   concentric circles whose radii vary by 10.
 #
@@ -92,10 +91,22 @@ def draw_circles():
 #   test_draw_circles  may get you started more quickly on your new
 #   better_draw_circles  and  test_better_draw_circles.
 # ----------------------------------------------------------------------
+def test_better_draw_circles():
+    print('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
+    print('see rg window for result')
+    print('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
+    better_draw_circles(20)
 
 
+def better_draw_circles(n):
+    winner = rg.RoseWindow(400,400)
+    for k in range(8):
+        cir = rg.Circle(rg.Point(200,200), k * n)
+        cir.attach_to(winner)
+        winner.render(.5)
+    winner.close_on_mouse_click()
 # ----------------------------------------------------------------------
-# TODO: 3.
+# DONE: 3.
 #   In the previous exercise, you made a MORE POWERFUL version
 #   of draw_circles by introducing a PARAMETER for the amount by
 #   which the radii of the concentric circles increase.
@@ -122,6 +133,22 @@ def draw_circles():
 #   In testing your even_better_draw_circles function,
 #   can you make some fun pictures?
 # ----------------------------------------------------------------------
+def test_even_better_draw_circles():
+    print('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
+    print('see rg window for result')
+    print('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
+
+    even_better_draw_circles(20, 5, 'blue')
+
+
+def even_better_draw_circles(n,c,f):
+    winner = rg.RoseWindow(400, 400)
+    for k in range(c):
+        cir = rg.Circle(rg.Point(200, 200), k * n)
+        cir.outline_color = f
+        cir.attach_to(winner)
+        winner.render(.5)
+    winner.close_on_mouse_click()
 
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
